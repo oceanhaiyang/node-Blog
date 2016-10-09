@@ -1,0 +1,8 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<div class="container pd-t-30">
+	<% posts.forEach(function (tag, index) { %>
+	  <a class="label label-success" href="/tags/<%= tag %>"><%= tag %></a>
+	<% }) %>
+</div>
+<% include ./global/footer.ejs %>

@@ -1,0 +1,49 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<div class="container pd-t-50">
+	<form method="post" class="form-horizontal col-md-offset-3 col-md-6" id="regForm">
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">用户名</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="username" id="username" placeholder="用户名" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="col-sm-2 control-label">密码</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control" name="password" id="password" placeholder="密码" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="confirmpassword" class="col-sm-2 control-label">确认密码</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control" name="confirmpassword" id="confirmpassword" placeholder="确认密码" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">邮箱地址</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="email" id="email" placeholder="邮箱地址" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-success" data-toggle="modal" data-target=".message">注册</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="modal fade message" tabindex="-1">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-body text-center"><h4>请填写表单</h4></div>
+			<div class="modal-footer">
+	        	<a class="btn btn-default" data-dismiss="modal">确定</a>
+	   		</div>	
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/jquery.validate.min.js" ></script>
+
+<% include ./global/footer.ejs %>

@@ -1,0 +1,55 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<div class="container pd-t-30">
+	<form class="form-horizontal col-md-offset-2 col-md-8" method="post" id="postForm">
+		<div class="form-group">
+			<label for="title" class="col-sm-2 control-label">文章标题</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="title" name="title" value="<%= post.title %>" disabled="disabled">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="post" class="col-sm-2 control-label mg-r-15">文章正文</label>
+			<% post.tags.forEach(function (tag, index) { %>
+		    	<% if (tag) { %>
+		      	<span class="label label-info"><%= tag %></span>
+		    	<% } %>
+		  	<% }) %>
+		</div>
+		
+		<script charset="utf-8" src="/KindEditor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="/KindEditor/lang/zh_CN.js"></script>
+		<script>
+		var editor;
+		KindEditor.ready(function(K) {
+		  editor = K.create('textarea[name="post"]', {
+		  allowImageUpload : true,
+		  urlType:'domain',
+		  uploadJson:'http://127.0.0.1:3000/upload',
+		  width:'100%',
+		  height:'500px',
+		  resizeType:'0',
+		  items : ['undo' , 'redo' , 'cut' , 'copy' , 'paste' , 'preview', '|',
+		    'fontname', 'fontsize', 'indent', 'outdent' , '|', 'forecolor', 'hilitecolor', 'bold', 'italic',
+		    'underline', 'strikethrough' , 'removeformat', 'hr' , 'lineheight' , '|', 'justifyleft', 'justifycenter', 'justifyright',
+		    'justifyfull' , 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link' , 'baidumap',
+		  	'table' , 'source' , 'code' ,'fullscreen']
+		  });
+		  editor.html('<%- post.post %>');
+		});
+		</script>
+		
+		<div class="form-group">
+			<label for="post" class="col-sm-2 control-label">文章正文</label>
+			<div class="col-sm-10">
+				<textarea name="post" class="form-control" rows="15"></textarea>
+			</div>
+		</div>
+		<input type="submit" class="btn btn-danger pull-right" value="保存修改" data-toggle="modal" data-target=".message"/>
+		<a href="javascript:;" onclick="window.history.back();" class="btn btn-success pull-right mg-r-20" >返回</a>
+	</form>
+</div>
+
+<script type="text/javascript" src="/js/jquery.validate.min.js" ></script>
+
+<% include ./global/footer.ejs %>

@@ -1,0 +1,27 @@
+label.error,#form-info{
+	margin-top: 5px;
+	background: #fcf8e3;
+	padding:6px 12px;
+	width:100%;
+	color: #c7254e;
+	margin-bottom: -10px;
+}
+.message{
+	top:30%
+}
+.message .modal-footer{
+	padding:0;
+}
+.message .modal-footer>.btn{
+	display: block;
+	border: none;
+	padding:10px 12px;
+	border-top-right-radius:0px;
+	border-top-left-radius:0px;
+}
+.message .modal-footer .btn+.btn{
+	margin:0;
+	border-left:1px solid #ccc;
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+}

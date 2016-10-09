@@ -1,0 +1,17 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<link rel="stylesheet" type="text/css" href="/css/webuploader.css">
+<div class="container text-center">
+	<h2 >图片上传</h2>
+	<div id="uploader-demo">
+	    <!--用来存放item-->
+	    <div id="fileList" class="uploader-list row"></div>
+	    <div id="filePicker">
+	    	<span class="glyphicon glyphicon-cloud-upload"></span>
+	    </div>
+	    
+	</div>
+	<span class="text-danger">(请上传单张大小在10M以内的gif,jpg,jpeg,png格式的图片.)</span>
+</div>
+<script type="text/javascript" src="/js/webuploader.min.js"></script>
+<% include ./global/footer.ejs %>

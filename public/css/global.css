@@ -1,0 +1,96 @@
+html,body {
+  font-size: 14px;
+  font-family: "novecento_sans_widenormal","HiraginoSansGB-W3","STHeiti","Microsoft JhengHei","Microsoft YaHei";
+}
+body{
+	background: url('/image/contentBg.jpg') repeat;
+}
+.pd-10{
+	padding:10px;
+}
+.pd-t-20{
+	padding-top: 20px;
+}
+.pd-t-30{
+	padding-top: 30px;
+}
+.pd-t-50{
+	padding-top: 50px;
+}
+.mg-r-15{
+	margin-right: 15px;;
+}
+.mg-r-20{
+	margin-right: 20px;
+}
+a {
+  color: #00B7FF;
+}
+.header{
+	background: url(../image/bg-header.jpg) center 0px repeat-x;
+	background-size: cover;
+	width: 100%;
+	height: 150px;
+	position: relative;
+}
+.header .userhead{
+	position: absolute;
+	top:15px;
+	right:7%;
+}
+.header .userhead img{
+	width: 48px;
+	height: 48px;
+}
+
+.header>.container{
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 10px;
+	width:100%
+}
+button.navbar-toggle .icon-bar{
+	background-color: #ccc;
+}
+.orange{
+	color:#c88326;
+}
+.info>span{
+	color:#999;
+	padding:0 8px;
+	font-size: 13px;
+}
+.info .glyphicon{
+	margin-right: 5px;
+}
+
+.search-wrap{
+	color: #00B7FF;
+	padding:10px 0px;
+	height:50px;
+	cursor: pointer;
+	position: relative;
+}
+.search-wrap .active>input{
+	width: 170px;
+	opacity: 1;
+}
+.search-btn{
+	position: absolute;
+	right: 10px;
+	top:16px;
+}
+.input-wrap input{
+	transition: 0.3s all ease;
+	display: inline-block;
+	width: 0px;
+	opacity: 0;
+	height:25px;
+	font-size: 13px;
+	background: rgba(0,0,0,0.2);
+	color:#fff;
+}
+.input-wrap input::-webkit-input-placeholder{
+	color:#f5f5f5;
+}
+

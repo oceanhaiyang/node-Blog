@@ -1,0 +1,19 @@
+label.error,#form-info{
+	margin-top: 5px;
+	background: #fcf8e3;
+	padding:6px 12px;
+	width:100%;
+	color: #c7254e;
+	margin-bottom: -10px;
+}
+.message{
+	top:30%
+}
+.message .modal-footer{
+	padding:0;
+}
+.message .modal-footer>.btn{
+	display: block;
+	border: none;
+	padding:10px 12px;
+}

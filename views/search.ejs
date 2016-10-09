@@ -1,0 +1,22 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<div class="container pd-t-30">
+	<% if(posts.length){ %>
+	<% posts.forEach(function (post, index) { %>
+		<div class="media">
+	  		<div class="media-body">
+				<h4 class="media-heading col-md-6 "><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h4>
+	  			<p class="info text-right col-md-6">
+					<span>作者：<a href="/u/<%= post.name %>"><%= post.name %></a></span>  
+					<span>日期：<%= post.time.minute %></span> 
+					<span><span class="glyphicon glyphicon-eye-open"></span><span class="orange">阅读</span><% if(post.pv){ %>(<%=post.pv%>)<%}else{%>(0)<%}%></span> 
+					<span><span class="glyphicon glyphicon-comment"></span><span class="orange">评论</span>(<%= post.comments.length %>)</span>
+	  			</p>
+	  		</div>
+		</div>
+	<% }) %>
+	<% } else { %>
+		<h3 class="text-center">暂无搜索结果</h3>
+	<% } %>
+</div>
+<% include ./global/footer.ejs %>

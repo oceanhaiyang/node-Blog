@@ -1,0 +1,29 @@
+<% include ./global/header.ejs %>
+<% include ./global/nav.ejs %>
+<div class="container pd-t-30">
+	<% posts.forEach(function (post, index) { %>
+	<div class="media">
+  		<div class="media-body">
+  			
+			<h4 class="media-heading col-md-6"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h4>
+  			<p class="col-md-6 text-right">
+			  	<% post.tags.forEach(function (tag, index) { %>
+			    	<% if (tag) { %>
+			      	<a class="label label-info" href="/tags/<%= tag %>"><%= tag %></a>
+			    	<% } %>
+			  	<% }) %>
+			</p>
+  			<div class="detail"><%- post.post %></div>
+  			<div class="info text-right">
+				<span>作者：<a href="/u/<%= post.name %>"><%= post.name %></a></span>  
+				<span>日期：<%= post.time.minute %></span> 
+				<span><span class="glyphicon glyphicon-eye-open"></span><span class="orange">阅读</span><% if(post.pv){ %>(<%=post.pv%>)<%}else{%>(0)<%}%></span> 
+				<span><span class="glyphicon glyphicon-comment"></span><span class="orange">评论</span>(<%= post.comments.length %>)</span>
+  			</div>
+  		</div>
+	</div>
+	<% }) %>
+	<div id="pager" count="<%= count %>"></div>
+</div>
+<script src="/js/page.js"></script>
+<% include ./global/footer.ejs %>
